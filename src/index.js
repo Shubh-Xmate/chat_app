@@ -14,8 +14,14 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 
 app.use(express.static(publicDirectoryPath))
 
-io.on('connection', () => {
+io.on('connection', (socket) => {
     console.log("new socket connection")
+    socket.emit('countUpdated', "The count has been updated")
+    
+    socket.on('increment', (data) => {
+        console.log(data)
+        io.emit('countUpdated', "count ++")
+    })
 })
 
 server.listen(port, () => {
