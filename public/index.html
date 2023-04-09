@@ -1,12 +1,17 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html>
     <head>
-        
+
     </head>
     <body>
         Chat App
-        <button id="clickMe">click me</button>
-        <script src="/socket.io/socket.io.js"></script> <!--  client side socket script  -->
-        <script src="js/chat.js"></script>
+        
+        <form id="message-form">
+            <input name="message" placeholder="Message">
+            <button>Send</button>
+        </form>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/chat.js"></script>
     </body>
 </html>
